@@ -1,0 +1,74 @@
+Functional Interface:
+Functional Interface is an interface with only single abstract method. As a functional
+interface can have only one abstract method that’s why it is also known as Single
+Abstract Method Interfaces or SAM Interfaces. We can either create our own functional interface
+or can use predefined functional interfaces provided by java.
+
+it can have any number of default and static methods. It can also have methods of object class.
+
+A functional interface can extends another interface only when it does not have any abstract method.
+Important Predefined Functional Interfaces
+Consumer
+Supplier
+Predicate
+Function
+
+Consumer
+Consumes takes 1 input if consumer or 2 inputs if biConsumer and doesn't return
+A consumer is someone who “consumes” something. So naturally, when it comes to the Consumer interface,
+it has a single abstract method that accepts one argument of type <T> but returns nothing.
+ The Consumer interface is defined in the java.util.function package
+
+ Supplier
+ If a consumer “consumes” your input, a supplier “supplies” you an output.
+ The Supplier interface defined in the java.util.function package has a single
+ abstract method get that doesn’t accept any argument and returns an object of type <T>
+
+ Predicate
+ The Merriam-Webster dictionary defines a predicate as “something that is affirmed or
+ denied of the subject in a proposition in logic”. Fancy as it sounds,
+  the meaning of a Predicate functional interface is more or less the same,
+  i.e. it affirms/denies something based on the conditional logic you provide.
+  This Predicate interface, defined in the java.util.function package,
+  has a single abstract test method that accepts an object of type <T> and returns a boolean value:
+
+Chaining Consumer + Supplier + Predicate
+
+ consumer.accept(predicate.test(supplier.get()));
+
+ Function
+ A ‘function’ is something that takes an input ‘x’, does some processing over this
+  input and in turn returns an output ‘y’. Similarly, the Function<T, R> functional
+  interface, present in the java.util.function package, has a method apply, that takes
+  one argument of type <T> and returns a value of type <R>:
+
+  Note that, when we write Function<T,R> T is the type of the argument and R is the
+  type of the return value. E.g. if we write Function<Integer, String>, this would mean
+   that the apply method of this Function accepts an argument of type Integer and returns a
+
+
+E.g. If we write f1.compose(f2), f2’s apply will be called before f1’s apply.
+But if we write f1.andThen(f2), f2’s apply will be called after f1’s apply.
+
+The identity method of a Function
+An identity method, in the world of functional programming or rather mathematics,
+ is a method in which the output is same as the input. It is defined in the Function interface as:
+
+
+ BiConsumer<T, U> is similar to a Consumer that takes two inputs of type T and U
+ instead of one and returns nothing.
+
+ BiPredicate<T, U> is similar to a Predicate that takes two inputs of type T and U
+ instead of one for the filtering purpose and returns a boolean value.
+
+ BiFunction<T, U, R> is similar to a Function that takes two inputs of type
+  T and U instead of one and returns an output of type R.
+
+ UnaryOperator<T> extends a Function that takes an input of type T and returns an output,
+ also of type T.
+
+ BinaryOperator<T> extends a BiFunction that takes two inputs of type T and returns an output,
+ also of type T.
+ Apart from these generic interfaces, we also have other interfaces
+  such as IntConsumer, DoubleConsumer, LongSupplier, etc.
+  where the types aren’t generic but specified in the definition itself.

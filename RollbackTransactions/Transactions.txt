@@ -1,0 +1,74 @@
+ show variables where variable_name="port";
+ show databases;
+ use transactionaldemo;
+
+CREATE TABLE Employees (
+                         pk_EmpID int PRIMARY KEY ,
+                         LastName varchar(255),
+                         FirstName varchar(255),
+                         Address varchar(255),
+                         City varchar(255)
+);
+
+
+
+CREATE TABLE Company (
+                           comId int PRIMARY KEY ,
+                           compName varchar(255),
+                           profile varchar(255),
+                           fk_EmpId INT ,
+                           CONSTRAINT fk_ied FOREIGN KEY (fk_EmpId)
+                               REFERENCES Employees(pk_EmpID)
+
+);
+
+CREATE TABLE insurance (
+                           pk_insId int PRIMARY KEY ,
+                           amount varchar(255),
+                           type varchar(255),
+                           company varchar(255),
+                           fk_compId INT ,
+                           CONSTRAINT fk_id FOREIGN KEY (fk_compId)
+                               REFERENCES Company(comId)
+
+);
+
+insert into Employees (pk_EmpID, LastName, FirstName, Address, City) values (1912,'dar','adil','kg-um','sgr');
+
+insert into company (comId, compName, profile, fk_EmpId) values (0129,'volkswagen','engineer',1912);
+
+insert into insurance (pk_insId, amount, type, company, fk_compId) VALUES (1001,'120000','premium','vwits',129);
+
+drop table insurance;
+
+
+
+@Service
+public class OrganzationServiceImpl implements OrganizationService {
+
+	@Autowired
+	EmployeeService employeeService;
+
+	@Autowired
+	HealthInsuranceService healthInsuranceService;
+
+	@Override
+	public void joinOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance) {
+		employeeService.insertEmployee(employee);
+		healthInsuranceService.registerEmployeeHealthInsurance(employeeHealthInsurance);
+	}
+
+	@Override
+	public void leaveOrganization(Employee employee, EmployeeHealthInsurance employeeHealthInsurance) {
+		employeeService.deleteEmployeeById(employee.getEmpId());
+		healthInsuranceService.deleteEmployeeHealthInsuranceById(employeeHealthInsurance.getEmpId());
+	}
+}
+
+
+
+
+
+
+
+

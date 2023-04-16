@@ -1,0 +1,35 @@
+git config --global user.name "Aadil Dar"
+git config --global user.email "daradil639@gmail.com"
+git status
+git init
+git add .
+git commit -m "initial commit"
+git remote add origin "link here"
+git push origin master                                    --force
+git log    ->History shows
+git branch  ->shows which branch you are in;
+git branch "new branch name"  ->create new branch
+git checkout "new branch name"  ->switch branch 
+git checkout "new branch name"  ->switch branch 
+touch newfile.txt   ->make new file
+
+git merge "branch_name"  ->merge branch with the branch you are in
+git branch -d "branch_name"  ->deletes branch
+git diff  ->look details of changes
+git diff  "file name"  ->particular file
+git pull origin master
+git clone  
+git fork
+git stash save   
+git rebase
+git squash
+                    visualising git:  ->a website
+
+git config --global --unset https.proxy
+git clone -b branch url
+
+CREDENTIAL MANAGER
+
+
+
+
