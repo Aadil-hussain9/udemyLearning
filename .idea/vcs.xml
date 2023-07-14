@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FrontEndUnitTesting/FrontEndTestingPractice/angular-unit-testing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FrontEndUnitTesting/ng-unit-test-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MicroServices/microServicesProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RestApi/Api_Practice" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringCloud/BackendKeyCloakWithFrontend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringCloud/SpringCloud_KeyCloak" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringCloud/frontEnd_keycloak/FrontEndKeyCloak" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringSecurity/SecurityDemoPoc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringTodoProj/Angular_FrontEnd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SpringTodoProj/TodoApplicationBackend" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/TDD/Tdd_Practice" vcs="Git" />
+  </component>
+</project>
